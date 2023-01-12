@@ -14,3 +14,8 @@ export type LoggedUserParams = {
   id: string
   loginToken: string
 }
+
+export type UserDataLocalStorage = {
+  id: string,
+  name: string
+}

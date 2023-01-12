@@ -1,3 +1,4 @@
+import { UserDataLocalStorage } from 'src/pages/authentication/interfaces/Authentication'
 import { LocalStorageHelper } from '../common/helpers/LocalStorageHelper'
 
 export class AuthenticationService {
@@ -13,6 +14,14 @@ export class AuthenticationService {
       return false
     }
     return true
+  }
+
+  getDetails(): UserDataLocalStorage | null {
+    const isUserLogedIn = this.validateCredentials()
+    if(!isUserLogedIn){
+      return null
+    }
+    return LocalStorageHelper.GetUserData()
   }
 }
 

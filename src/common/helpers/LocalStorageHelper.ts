@@ -1,17 +1,14 @@
+import { UserDataLocalStorage } from 'src/pages/authentication/interfaces/Authentication'
+
 const tokenKey = 'persiniAuthToken'
 const userDataKey = 'persiniUserData'
-
-type UserLocalStorage = {
-  id: string,
-  name: string
-}
 
 export class LocalStorageHelper {
   public static GetAccessToken(): string | null {
     return localStorage.getItem(tokenKey)
   }
 
-  public static GetUserData(): UserLocalStorage | null {
+  public static GetUserData(): UserDataLocalStorage | null {
     const userData = localStorage.getItem(userDataKey)
     if (userData) {     
       return JSON.parse(userData)
@@ -23,7 +20,7 @@ export class LocalStorageHelper {
     localStorage.setItem(tokenKey, value)
   }
 
-  public static SetUserData(user: UserLocalStorage): void {
+  public static SetUserData(user: UserDataLocalStorage): void {
     localStorage.setItem(userDataKey, JSON.stringify(user))
   }
 
