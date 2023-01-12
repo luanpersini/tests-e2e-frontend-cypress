@@ -4,7 +4,6 @@ import navigationPath from '../../../common/path/navigationPath'
 
 //import path from '../../../common/path/path'
 import AuthenticationService from '../../../services/AuthenticationService'
-import { Avatar } from './avatar'
 import { CenterLinks } from './center-links'
 import { NavContainer } from './navbar.style'
 import { ToggleButton } from './toggle-button'
@@ -34,7 +33,11 @@ export const NavBar: React.FC = () => {
               </span>
             )}
 
-            {isUserLogedIn && <Avatar />}
+            {isUserLogedIn && (
+              <span>
+                <a href={navigationPath.auth.logout}>Logout</a>
+              </span>
+            )}
           </div>
         </div>
       </div>
