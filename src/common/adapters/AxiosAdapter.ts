@@ -1,8 +1,6 @@
 import Axios, { AxiosRequestConfig } from 'axios'
-import { HttpStatusCode } from 'src/interfaces/http-client'
 
 import { LocalStorageHelper } from '../helpers/LocalStorageHelper'
-import navigationPath from '../path/navigationPath'
 
 export type ErrorResponse = {
   status: number
@@ -14,7 +12,7 @@ function authRequestInterceptor(config: AxiosRequestConfig) {
 
   config.headers = { Accept: 'application/json' }
   if (authorizationToken) {
-    config.headers.authorization = `Bearer ${authorizationToken}`
+    config.headers.authorization = authorizationToken
   }
   return config
 }
@@ -40,19 +38,8 @@ axiosClient.interceptors.response.use(
         message: e.message
       }
     }
-
-    //TODO (FD) Remove hardcoded condition, move it to a interceptor
-    if (error.message === 'user-unverified') {
-      window.location = navigationPath.settings.emailVerification.resolve() as unknown as Location
-      return
-    }
-
-    if (error.status === HttpStatusCode.forbidden) {
-      window.location = navigationPath.error.forbidden.resolve() as unknown as Location
-    }
-
+    
     //TODO implement error - Log storage here - notification system to warn us about certain error
-    //TODO (FD) Remove hardcoded condition, move it to a interceptor
     if (process.env.NODE_ENV !== 'production') {
       console.log(error)
     }

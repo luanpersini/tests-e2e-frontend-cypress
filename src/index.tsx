@@ -6,7 +6,6 @@ import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter } from 'react-router-dom'
-import 'src/common/path/PathResolverExtension'
 import App from './App'
 import { StatefulThemeProvider } from './common/theme/themeProvider'
 

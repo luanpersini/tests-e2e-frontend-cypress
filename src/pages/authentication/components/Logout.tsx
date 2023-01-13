@@ -9,7 +9,7 @@ export function Logout() {
   useEffect(() => {
     (async () => {
       await AuthenticationService.logout()
-      navigate(navigationPath.home.resolve(), { state: { alertMessage: 'Logged out successfully' } })
+      navigate(navigationPath.home, { state: { alertMessage: 'Logged out successfully' } })
       navigate(0)
     })()
   }, [])

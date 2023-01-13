@@ -9,7 +9,7 @@ export function ProtectedRoute(props: any) {
 
   if (AuthenticationService.validateCredentials() === false) {
     console.log('Unauthorized, redirecting.')
-    return <Navigate to={navigationPath.auth.login.resolve()} state={{ from: previousLocation }} />
+    return <Navigate to={navigationPath.auth.login} state={{ from: previousLocation }} />
   } else {
     return <>{children}</>
   }

@@ -19,7 +19,7 @@ export const NavBar: React.FC = () => {
           <ToggleButton />
 
           {/*<!-- Navbar brand -->*/}
-          <Link className="navbar-brand m-0 ms-auto" to={navigationPath.home.resolve()}>
+          <Link className="navbar-brand m-0 ms-auto" to={navigationPath.home}>
             Persini Cypress
           </Link>
 

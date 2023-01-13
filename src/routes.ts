@@ -3,6 +3,7 @@ import { NotFound } from './components/general/NotFound'
 import { Route } from './interfaces/route'
 import { authRoutes } from './pages/authentication/authRoutes'
 import { Homepage } from './pages/homepage/Homepage'
+import { usersRoutes } from './pages/users/usersRoutes'
 
 const mainRoutes: Route[] = [
   {
@@ -30,7 +31,8 @@ const notFound: Route[] = [
 const routes: Route[] = [
   ...mainRoutes,
   ...notFound,
-  ...authRoutes
+  ...authRoutes,
+  ...usersRoutes
 ]
 
 export default routes

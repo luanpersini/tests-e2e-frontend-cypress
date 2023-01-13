@@ -11,7 +11,7 @@ export function CenterLinks() {
       <NavigationLink className="nav-link" to={navigationPath.home}>
         Home
       </NavigationLink>     
-      <NavigationLink className="nav-link" to={navigationPath.home}>
+      <NavigationLink className="nav-link" to={navigationPath.users.home}>
         Users
       </NavigationLink>    
     </Nav>

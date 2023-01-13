@@ -24,7 +24,7 @@ export function Signup(props: Page) {
     <div>      
       <PageTitle title={props.title} />
       <form
-      onSubmit={(evt: FormEventFnc) => handleSubmit(evt, data, () => signup(data), navigationPath.projects.home.resolve())}
+      onSubmit={(evt: FormEventFnc) => handleSubmit(evt, data, () => signup(data), navigationPath.home)}
       id="SignupForm"
     >
       <Input name="name" label="Name" errors={errors} onChange={(evt: FormEventInput) => handleChange(evt, data)} inputvalue={data} />
